@@ -19,6 +19,13 @@
 		427CB1C928DDC9D4004AFB6D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CB1C828DDC9D4004AFB6D /* String+Extension.swift */; };
 		427CB1CD28DDCABA004AFB6D /* ViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CB1CC28DDCABA004AFB6D /* ViewControllerViewModel.swift */; };
 		427CB1CF28DDCB00004AFB6D /* ViewControllerViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CB1CE28DDCB00004AFB6D /* ViewControllerViewModelDelegate.swift */; };
+		427CB1D128DDCE6A004AFB6D /* APIErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CB1D028DDCE6A004AFB6D /* APIErrorModel.swift */; };
+		427CB1D328DDCF28004AFB6D /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CB1D228DDCF27004AFB6D /* RequestType.swift */; };
+		427CB1D628DDCFB3004AFB6D /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CB1D528DDCFB3004AFB6D /* Logger.swift */; };
+		427CB1D828DDD0FF004AFB6D /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CB1D728DDD0FF004AFB6D /* CustomError.swift */; };
+		427CB1DA28DDDA33004AFB6D /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CB1D928DDDA33004AFB6D /* Data+Extension.swift */; };
+		427CB1E028DDED79004AFB6D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427CB1DE28DDED79004AFB6D /* BaseViewController.swift */; };
+		427CB1E128DDED79004AFB6D /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 427CB1DF28DDED79004AFB6D /* BaseViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +43,13 @@
 		427CB1C828DDC9D4004AFB6D /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		427CB1CC28DDCABA004AFB6D /* ViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerViewModel.swift; sourceTree = "<group>"; };
 		427CB1CE28DDCB00004AFB6D /* ViewControllerViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerViewModelDelegate.swift; sourceTree = "<group>"; };
+		427CB1D028DDCE6A004AFB6D /* APIErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorModel.swift; sourceTree = "<group>"; };
+		427CB1D228DDCF27004AFB6D /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		427CB1D528DDCFB3004AFB6D /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		427CB1D728DDD0FF004AFB6D /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		427CB1D928DDDA33004AFB6D /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		427CB1DE28DDED79004AFB6D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		427CB1DF28DDED79004AFB6D /* BaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +115,7 @@
 		427CB1BB28DDC905004AFB6D /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				427CB1DD28DDED60004AFB6D /* BaseVC */,
 				427CB1CB28DDCAA2004AFB6D /* ViewModel */,
 				427CB1BC28DDC923004AFB6D /* View */,
 			);
@@ -128,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				427CB1BF28DDC94D004AFB6D /* Network.swift */,
+				427CB1D228DDCF27004AFB6D /* RequestType.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -135,7 +151,9 @@
 		427CB1C128DDC95B004AFB6D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				427CB1D728DDD0FF004AFB6D /* CustomError.swift */,
 				427CB1C228DDC966004AFB6D /* MainModel.swift */,
+				427CB1D028DDCE6A004AFB6D /* APIErrorModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -143,6 +161,7 @@
 		427CB1C428DDC97A004AFB6D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				427CB1D428DDCFA6004AFB6D /* Helpers */,
 				427CB1C528DDC98D004AFB6D /* Extensions */,
 			);
 			path = Utils;
@@ -153,6 +172,7 @@
 			children = (
 				427CB1C628DDC99C004AFB6D /* Int+Extension.swift */,
 				427CB1C828DDC9D4004AFB6D /* String+Extension.swift */,
+				427CB1D928DDDA33004AFB6D /* Data+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -171,6 +191,23 @@
 				427CB1CE28DDCB00004AFB6D /* ViewControllerViewModelDelegate.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		427CB1D428DDCFA6004AFB6D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				427CB1D528DDCFB3004AFB6D /* Logger.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		427CB1DD28DDED60004AFB6D /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				427CB1DE28DDED79004AFB6D /* BaseViewController.swift */,
+				427CB1DF28DDED79004AFB6D /* BaseViewController.xib */,
+			);
+			path = BaseVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				427CB1B228DDC8B1004AFB6D /* LaunchScreen.storyboard in Resources */,
+				427CB1E128DDED79004AFB6D /* BaseViewController.xib in Resources */,
 				427CB1AF28DDC8B1004AFB6D /* Assets.xcassets in Resources */,
 				427CB1AD28DDC8AE004AFB6D /* Main.storyboard in Resources */,
 			);
@@ -245,12 +283,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				427CB1AA28DDC8AE004AFB6D /* ViewController.swift in Sources */,
+				427CB1DA28DDDA33004AFB6D /* Data+Extension.swift in Sources */,
 				427CB1C928DDC9D4004AFB6D /* String+Extension.swift in Sources */,
+				427CB1D828DDD0FF004AFB6D /* CustomError.swift in Sources */,
 				427CB1A628DDC8AE004AFB6D /* AppDelegate.swift in Sources */,
+				427CB1E028DDED79004AFB6D /* BaseViewController.swift in Sources */,
+				427CB1D128DDCE6A004AFB6D /* APIErrorModel.swift in Sources */,
 				427CB1CD28DDCABA004AFB6D /* ViewControllerViewModel.swift in Sources */,
 				427CB1C028DDC94D004AFB6D /* Network.swift in Sources */,
 				427CB1C728DDC99C004AFB6D /* Int+Extension.swift in Sources */,
+				427CB1D628DDCFB3004AFB6D /* Logger.swift in Sources */,
 				427CB1C328DDC966004AFB6D /* MainModel.swift in Sources */,
+				427CB1D328DDCF28004AFB6D /* RequestType.swift in Sources */,
 				427CB1CF28DDCB00004AFB6D /* ViewControllerViewModelDelegate.swift in Sources */,
 				427CB1A828DDC8AE004AFB6D /* SceneDelegate.swift in Sources */,
 			);
