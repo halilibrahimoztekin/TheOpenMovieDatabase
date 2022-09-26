@@ -12,6 +12,7 @@ enum CustomError: Error {
     case dataError
     case urlError
     case responseError
+    case noMoreMovie
 
     var message: String{
         switch self {
@@ -23,6 +24,8 @@ enum CustomError: Error {
             return "Url error"
         case .responseError:
             return "Response Error"
+        case .noMoreMovie:
+            return "We can't find more movie. Please research with new keyword."
         }
     }
 }

@@ -22,6 +22,7 @@ class SearchCollectionView : NSObject {
     weak var delegate : SearchCollectionViewOutPut?
     private lazy var movies : [Movies] = []
     private var index = 1
+    var isPagination = true
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies.count
@@ -37,7 +38,7 @@ class SearchCollectionView : NSObject {
         delegate?.onSelected(movie: movies[indexPath.row])
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row > movies.count - 5 {
+        if isPagination && indexPath.row > movies.count - 2 {
             index += 1
             self.delegate?.loadMoreData(index: index)
         }

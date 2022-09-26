@@ -124,7 +124,7 @@ extension HomePageVC: UISearchBarDelegate {
         if let text = searchBar.text {
             movieTitle = text
             self.collectionModel.removeAllMovies()
-
+            self.collectionModel.isPagination = true
             getMovies(movieTitle: text)
             self.searchBar.endEditing(true)
         }
@@ -149,7 +149,13 @@ extension HomePageVC: HomePageVCViewModelDelegate {
     }
 
     func didErrorMovieLoading(error: CustomError) {
-        AlertManager.shared.showAlert(title: "Warning".uppercased(), message: error.message.uppercased(), containerVC: self)
+        DispatchQueue.main.async {
+            self.stopAndHideAnimation()
+            self.collectionView.setContentOffset(.zero, animated: false)
+            self.collectionModel.isPagination = false
+            AlertManager.shared.showAlert(title: "Warning".uppercased(), message: error.message.uppercased(), containerVC: self)
+        }
+       
     }
 }
 
