@@ -11,6 +11,7 @@
 		42367D1D28E10F810018D8F6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42367D1C28E10F810018D8F6 /* UIColor+Extension.swift */; };
 		42367D2028E1DC0D0018D8F6 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42367D1F28E1DC0D0018D8F6 /* AlertManager.swift */; };
 		42367D2228E1DE1E0018D8F6 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42367D2128E1DE1E0018D8F6 /* UIApplication+Extension.swift */; };
+		42367D2428E21C430018D8F6 /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42367D2328E21C430018D8F6 /* MovieDetailVC.swift */; };
 		42492EA728E0538A00122302 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 42492EA628E0538A00122302 /* SDWebImage */; };
 		42492EAA28E053D600122302 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42492EA928E053D600122302 /* UIImageView+Extension.swift */; };
 		42492EAD28E0555400122302 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 42492EAC28E0555400122302 /* Lottie */; };
@@ -56,6 +57,7 @@
 		42367D1C28E10F810018D8F6 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		42367D1F28E1DC0D0018D8F6 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		42367D2128E1DE1E0018D8F6 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		42367D2328E21C430018D8F6 /* MovieDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailVC.swift; sourceTree = "<group>"; };
 		42492EA928E053D600122302 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		42492EAE28E0561B00122302 /* loadingAnim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingAnim.json; sourceTree = "<group>"; };
 		42492EB228E05C2E00122302 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				42492EBE28E06A8F00122302 /* ViewModel */,
+				42367D2328E21C430018D8F6 /* MovieDetailVC.swift */,
 			);
 			path = MovieDetailPage;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				42492ECC28E07C0500122302 /* SearchCollectionView.swift in Sources */,
 				42492EB328E05C2E00122302 /* AnimationViewController.swift in Sources */,
 				427CB1C028DDC94D004AFB6D /* Network.swift in Sources */,
+				42367D2428E21C430018D8F6 /* MovieDetailVC.swift in Sources */,
 				427CB1C728DDC99C004AFB6D /* Int+Extension.swift in Sources */,
 				42492EAA28E053D600122302 /* UIImageView+Extension.swift in Sources */,
 				42367D2228E1DE1E0018D8F6 /* UIApplication+Extension.swift in Sources */,

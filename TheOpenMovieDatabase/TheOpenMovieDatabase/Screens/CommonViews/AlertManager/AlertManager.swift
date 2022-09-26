@@ -12,7 +12,7 @@ class AlertManager: NSObject {
 
     func showAlert(title: String, message: String, containerVC: UIViewController? = nil) {
         let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
-        let doneAction = UIAlertAction.init(title: "Tamam", style: .default, handler: nil)
+        let doneAction = UIAlertAction.init(title: "OK", style: .default, handler: nil)
         alert.addAction(doneAction)
 
         if containerVC != nil {
