@@ -1,42 +1,11 @@
 //
-//  MainModel.swift
+//  SearchMovieModel.swift
 //  TheOpenMovieDatabase
 //
-//  Created by bukefalosWorkMac on 23.09.2022.
+//  Created by bukefalosWorkMac on 25.09.2022.
 //
 
 import Foundation
-struct MovieSearchModel: Codable {
-    let search: [Search]?
-    let totalResults, response: String?
-
-    enum CodingKeys: String, CodingKey {
-        case search = "Search"
-        case totalResults
-        case response = "Response"
-    }
-}
-
-// MARK: - Search
-struct Search: Codable {
-    let title, year, imdbID: String?
-    let type: TypeEnum?
-    let poster: String?
-
-    enum CodingKeys: String, CodingKey {
-        case title = "Title"
-        case year = "Year"
-        case imdbID
-        case type = "Type"
-        case poster = "Poster"
-    }
-}
-
-enum TypeEnum: String, Codable {
-    case movie = "movie"
-    case series = "series"
-}
-
 struct MovieDetailModel: Codable {
     let title, year, rated, released: String?
     let runtime, genre, director, writer: String?
@@ -75,12 +44,3 @@ struct MovieDetailModel: Codable {
     }
 }
 
-// MARK: - Rating
-struct Rating: Codable {
-    let source, value: String?
-
-    enum CodingKeys: String, CodingKey {
-        case source = "Source"
-        case value = "Value"
-    }
-}
