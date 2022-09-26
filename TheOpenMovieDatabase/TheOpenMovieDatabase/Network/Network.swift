@@ -7,8 +7,11 @@
 
 import Foundation
 
-struct Network {
-    static let shared = Network()
+protocol NetworkDelegate: AnyObject {
+    func request<T: Decodable>(with type: RequestType, completion: @escaping (Result<T, CustomError>) -> Void)
+}
+class Network : NetworkDelegate {
+   
 
     func request<T: Decodable>(with type: RequestType, completion: @escaping (Result<T, CustomError>) -> Void) {
         
@@ -36,7 +39,7 @@ struct Network {
                 completion(.success(decodedResponse))
             }
             catch let error {
-                let failure = errorHandling(data: data)
+                let failure = self.errorHandling(data: data)
                 completion(.failure(.decodingError(model: failure)))
                 Logger.log(type: .error, text: error.localizedDescription)
             }
