@@ -6,8 +6,7 @@
 //
 
 import Foundation
-//http://www.omdbapi.com/?apikey=61c3f542&s=eternal&page=75 collection
-//http://www.omdbapi.com/?apikey=61c3f542&i=tt0338013 details
+
 struct URLConstants {
     static let baseURL = "http://www.omdbapi.com/?"
     static let apiKey = "apikey=61c3f542"

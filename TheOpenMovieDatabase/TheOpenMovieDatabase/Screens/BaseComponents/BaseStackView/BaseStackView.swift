@@ -19,7 +19,7 @@ class BaseStackView : UIStackView {
     }
     
     
-    func configure(){
+    private func configure(){
         self.translatesAutoresizingMaskIntoConstraints = false
         self.spacing = 10
         self.distribution = .fillEqually

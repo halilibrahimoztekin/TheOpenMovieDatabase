@@ -10,10 +10,11 @@ import Lottie
 import SnapKit
 class HomePageVC: BaseVC {
 
-    let viewModel = HomePageVCViewModel(networkDelegate: Network())
-    let collectionModel: SearchCollectionView = SearchCollectionView()
+    private let viewModel = HomePageVCViewModel(networkDelegate: Network())
+    private let dataSource: SearchCollectionView = SearchCollectionView()
 
-    let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
+    private let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
+    
     private var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.placeholder = "Write Movie Name Please"
@@ -21,11 +22,19 @@ class HomePageVC: BaseVC {
         searchBar.showsSearchResultsButton = true
         return searchBar
     }()
+    
     var movieTitle = ""
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        self.navigationItem.hidesBackButton = true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         initDelegate()
         self.view.addSubviews(searchBar, collectionView)
+        self.view.backgroundColor = .white
         registerCell()
         startAnimating(animationName: .emptyPageAnimation)
         setConstraint()
@@ -34,9 +43,9 @@ class HomePageVC: BaseVC {
     }
 
     private func initDelegate() {
-        collectionModel.delegate = self
-        collectionView.delegate = collectionModel
-        collectionView.dataSource = collectionModel
+        dataSource.delegate = self
+        collectionView.delegate = dataSource
+        collectionView.dataSource = dataSource
         viewModel.delegate = self
         searchBar.delegate = self
     }
@@ -64,7 +73,7 @@ class HomePageVC: BaseVC {
     func createCompositionalLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout {
             (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-
+            
             let firstItem = NSCollectionLayoutItem(
                 layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.30),
                                                    heightDimension: .fractionalHeight(1.0)))
@@ -74,13 +83,11 @@ class HomePageVC: BaseVC {
                                                    heightDimension: .fractionalHeight(0.5)),
                 subitem: firstItem, count: 3)
 
-            
-            
             let secondItem = NSCollectionLayoutItem(
                 layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5),
                                                    heightDimension: .fractionalHeight(1.0)))
             secondItem.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-            
+
             let secondGroup = NSCollectionLayoutGroup.horizontal(
                 layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                    heightDimension: .fractionalHeight(0.5)),
@@ -90,11 +97,9 @@ class HomePageVC: BaseVC {
                 layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                    heightDimension: .fractionalHeight(0.85)),
                 subitems: [firstGroup, secondGroup])
-            
-            let section = NSCollectionLayoutSection(group: nestedGroup)
-            
-            return section
 
+            let section = NSCollectionLayoutSection(group: nestedGroup)
+            return section
         }
         return layout
     }
@@ -123,8 +128,8 @@ extension HomePageVC: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text {
             movieTitle = text
-            self.collectionModel.removeAllMovies()
-            self.collectionModel.isPagination = true
+            self.dataSource.removeAllMovies()
+            self.dataSource.isPagination = true
             getMovies(movieTitle: text)
             self.searchBar.endEditing(true)
         }
@@ -141,7 +146,7 @@ extension HomePageVC: UISearchBarDelegate {
 //MARK: HomePageVCViewModelDelegate
 extension HomePageVC: HomePageVCViewModelDelegate {
     func didMovieLoadingFinished(model: MovieSearchModel) {
-        self.collectionModel.update(model: model)
+        self.dataSource.update(model: model)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.stopAndHideAnimation()
             self.collectionView.reloadData()
@@ -152,10 +157,10 @@ extension HomePageVC: HomePageVCViewModelDelegate {
         DispatchQueue.main.async {
             self.stopAndHideAnimation()
             self.collectionView.setContentOffset(.zero, animated: false)
-            self.collectionModel.isPagination = false
+            self.dataSource.isPagination = false
             AlertManager.shared.showAlert(title: "Warning".uppercased(), message: error.message.uppercased(), containerVC: self)
         }
-       
+
     }
 }
 
@@ -170,6 +175,6 @@ extension HomePageVC: SearchCollectionViewOutPut {
             let detailVC = MovieDetailVC(movieId: imbdId)
             makePush(toView: detailVC)
         }
-        
+
     }
 }

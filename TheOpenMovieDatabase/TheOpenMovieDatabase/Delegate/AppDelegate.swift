@@ -6,6 +6,12 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseRemoteConfig
+import FirebaseMessaging
+import UserNotifications
+
+var remoteConfig = RemoteConfig.remoteConfig()
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,15 +23,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor.darkPrimaryColor
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.darkPrimaryColor ?? .blue]
-//        self.window = UIWindow(frame: UIScreen.main.bounds)
-//          let nav1 = UINavigationController()
-//          let mainView = SplashScreenVC(nibName: nil, bundle: nil) //ViewController = Name of your controller
-//          nav1.viewControllers = [mainView]
-//          self.window!.rootViewController = nav1
-//          self.window?.makeKeyAndVisible()
+        self.window?.backgroundColor = .white
+        FirebaseApp.configure()
+        RemoteConfigHelper.shared.fetchRemoteConfig()
+        Messaging.messaging().delegate = self
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge]) { success, error in
+        }
+        application.registerForRemoteNotifications()
         return true
     }
-
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        messaging.token { token, _ in
+            guard let token = token else {
+                return
+            }
+            Logger.log(text: token)
+            
+        }
+    }
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -43,3 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate : MessagingDelegate,UNUserNotificationCenterDelegate {
+    
+}
