@@ -35,5 +35,12 @@ class BaseVC: UIViewController {
         child?.removeFromParent()
         child?.stopAnimation()
     }
-
+    
+    func makePush(toView : UIViewController){
+        self.navigationController?.pushViewController(toView, animated: true)
+    }
+    
+    func makePop(){
+        self.navigationController?.popViewController(animated: true)
+    }
 }

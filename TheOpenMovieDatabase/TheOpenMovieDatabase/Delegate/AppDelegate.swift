@@ -9,7 +9,7 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -17,6 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor.darkPrimaryColor
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.darkPrimaryColor ?? .blue]
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//          let nav1 = UINavigationController()
+//          let mainView = SplashScreenVC(nibName: nil, bundle: nil) //ViewController = Name of your controller
+//          nav1.viewControllers = [mainView]
+//          self.window!.rootViewController = nav1
+//          self.window?.makeKeyAndVisible()
         return true
     }
 

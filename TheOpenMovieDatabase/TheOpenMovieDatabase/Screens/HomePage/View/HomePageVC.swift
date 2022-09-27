@@ -166,6 +166,10 @@ extension HomePageVC: SearchCollectionViewOutPut {
     }
 
     func onSelected(movie: Movies) {
-
+        if let imbdId = movie.imdbID {
+            let detailVC = MovieDetailVC(movieId: imbdId)
+            makePush(toView: detailVC)
+        }
+        
     }
 }
