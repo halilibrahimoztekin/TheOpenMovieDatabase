@@ -33,7 +33,6 @@ struct Logger {
         let lineNumber = "Line: " + line.toString
         let fileText = "File : " + file
         let logT = topAndBottom + nameAndIcon + linesString + lineNumber + "\n" + fileText + linesString + text + topAndBottom
-//        let logText = topAndBottom + linesString + file + linesString + line.toString + linesString + text + topAndBottom
         print(logT)
     }
    

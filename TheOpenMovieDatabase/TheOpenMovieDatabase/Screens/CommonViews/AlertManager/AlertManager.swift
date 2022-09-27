@@ -22,7 +22,7 @@ class AlertManager: NSObject {
         }
     }
     
-    func presentAlertAtRootController(alert: UIAlertController) {
+    private func presentAlertAtRootController(alert: UIAlertController) {
         DispatchQueue.main.async {
             let rootVC = UIApplication.shared.currentUIWindow()?.rootViewController
             

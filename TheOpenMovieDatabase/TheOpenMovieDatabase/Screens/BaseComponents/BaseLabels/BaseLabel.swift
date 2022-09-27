@@ -18,7 +18,7 @@ class BaseHeaderLabel : UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupLabelView (){
+    private func setupLabelView (){
         self.textColor = .darkPrimaryColor
         self.textAlignment = .center
         self.numberOfLines = 0

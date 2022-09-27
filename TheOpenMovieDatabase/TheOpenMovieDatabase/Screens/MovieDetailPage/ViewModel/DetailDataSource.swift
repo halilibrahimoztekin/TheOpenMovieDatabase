@@ -7,21 +7,28 @@
 
 import Foundation
 import UIKit
-
+import FirebaseAnalytics
 protocol DetailDataSourceInput {
     func update(sections: [DetailPageSections], movieDetail: MovieDetailModel)
 }
 
 
-class DetailDataSource : NSObject {
-    private var sections : [DetailPageSections] = []
-    private var movieDetail : MovieDetailModel?
+class DetailDataSource: NSObject {
+    private var sections: [DetailPageSections] = []
+    private var movieDetail: MovieDetailModel? {
+        didSet {
+            Analytics.logEvent("movieDetail", parameters: ["title":movieDetail?.title ?? "",
+                                                           "id":movieDetail?.imdbID ?? "",
+                                                           "genre":movieDetail?.genre ?? ""])
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return sections.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let movieDetail = movieDetail,!sections.isEmpty {
+        if let movieDetail = movieDetail, !sections.isEmpty {
             switch sections[indexPath.row] {
             case .image:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFullImageCell.reuseIdentifier, for: indexPath) as! DetailFullImageCell
@@ -84,36 +91,38 @@ class DetailDataSource : NSObject {
         else {
             return UICollectionViewCell()
         }
-        
- 
+
+
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if let movieDetail = movieDetail,!sections.isEmpty {
+        if let _ = movieDetail, !sections.isEmpty {
             switch sections[indexPath.row] {
             case .image:
-                return CGSize(width: UIScreen.width*0.9, height: UIScreen.height*0.4)
+                return CGSize(width: UIScreen.width * 0.9, height: UIScreen.height * 0.4)
             case .title:
-                return CGSize(width: UIScreen.width*0.95, height: 30)
+                return CGSize(width: UIScreen.width * 0.95, height: 30)
             case .plot:
-                return CGSize(width: UIScreen.width*0.95, height: 200)
-            case .director,.country,.writer,.awards:
-                return CGSize(width: UIScreen.width*0.95, height: 35)
+                return CGSize(width: UIScreen.width * 0.95, height: 200)
+            case .director, .country, .writer, .awards:
+                return CGSize(width: UIScreen.width * 0.95, height: 35)
+            case .released, .genre:
+                return CGSize(width: UIScreen.width, height: 35)
             case .actors:
-                return CGSize(width: UIScreen.width*0.95, height: 55)
+                return CGSize(width: UIScreen.width * 0.95, height: 55)
             default:
-                return CGSize(width: UIScreen.width*0.45, height: 30)
+                return CGSize(width: UIScreen.width * 0.45, height: 30)
             }
         }
         else {
             return CGSize(width: 0, height: 0)
         }
-     
+
     }
-    
+
 }
-extension DetailDataSource : UICollectionViewDelegate,UICollectionViewDataSource {}
-extension DetailDataSource : UICollectionViewDelegateFlowLayout {}
-extension DetailDataSource : DetailDataSourceInput {
+extension DetailDataSource: UICollectionViewDelegate, UICollectionViewDataSource { }
+extension DetailDataSource: UICollectionViewDelegateFlowLayout { }
+extension DetailDataSource: DetailDataSourceInput {
     func update(sections: [DetailPageSections], movieDetail: MovieDetailModel) {
         self.sections = sections
         self.movieDetail = movieDetail

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import FirebaseAnalytics
 
 class DetailViewControllerViewModel {
     weak var delegate: MovieDetailPageVMDelegate?

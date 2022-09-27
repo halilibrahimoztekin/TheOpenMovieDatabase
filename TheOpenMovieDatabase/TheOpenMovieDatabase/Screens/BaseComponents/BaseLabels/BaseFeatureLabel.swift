@@ -17,7 +17,7 @@ class BaseFeatureLabel : UILabel {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func configure(){
+    private func configure(){
         self.textColor = .primaryColor
         self.textAlignment = .left
         self.numberOfLines = 0

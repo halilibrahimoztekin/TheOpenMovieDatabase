@@ -10,7 +10,7 @@ import Lottie
 
 class AnimationViewController: UIViewController {
     var animationView: AnimationView?
-    let animationName : Animations
+    private let animationName : Animations
     init(animationName : Animations) {
         self.animationName = animationName
         super.init(nibName: nil, bundle: nil)
