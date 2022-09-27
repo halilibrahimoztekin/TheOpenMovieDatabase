@@ -19,7 +19,7 @@ class BaseContainer : UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(){
+    private func configure(){
         self.backgroundColor = UIColor.white
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.cornerRadius = 10

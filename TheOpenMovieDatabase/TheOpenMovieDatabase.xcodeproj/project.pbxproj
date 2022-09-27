@@ -23,6 +23,14 @@
 		42367D4228E3728D0018D8F6 /* BaseFeatureLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42367D4128E3728D0018D8F6 /* BaseFeatureLabel.swift */; };
 		42367D4428E37D2D0018D8F6 /* DetailOnlyTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42367D4328E37D2D0018D8F6 /* DetailOnlyTextCell.swift */; };
 		42367D4728E3853D0018D8F6 /* SplashScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42367D4628E3853D0018D8F6 /* SplashScreenVC.swift */; };
+		42367D4A28E387B30018D8F6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 42367D4928E387B30018D8F6 /* FirebaseAnalytics */; };
+		42367D4C28E387B30018D8F6 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 42367D4B28E387B30018D8F6 /* FirebaseAnalyticsSwift */; };
+		42367D4E28E387B30018D8F6 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 42367D4D28E387B30018D8F6 /* FirebaseMessaging */; };
+		42367D5028E387B30018D8F6 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 42367D4F28E387B30018D8F6 /* FirebaseRemoteConfig */; };
+		42367D5228E387B30018D8F6 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 42367D5128E387B30018D8F6 /* FirebaseRemoteConfigSwift */; };
+		42367D5428E38A060018D8F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42367D5328E38A050018D8F6 /* GoogleService-Info.plist */; };
+		42367D5828E38B1D0018D8F6 /* RemoteConfigHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42367D5728E38B1D0018D8F6 /* RemoteConfigHelper.swift */; };
+		42367D5C28E3A4CC0018D8F6 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42367D5B28E3A4CC0018D8F6 /* Reachability.swift */; };
 		42492EA728E0538A00122302 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 42492EA628E0538A00122302 /* SDWebImage */; };
 		42492EAA28E053D600122302 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42492EA928E053D600122302 /* UIImageView+Extension.swift */; };
 		42492EAD28E0555400122302 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 42492EAC28E0555400122302 /* Lottie */; };
@@ -80,6 +88,10 @@
 		42367D4128E3728D0018D8F6 /* BaseFeatureLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFeatureLabel.swift; sourceTree = "<group>"; };
 		42367D4328E37D2D0018D8F6 /* DetailOnlyTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOnlyTextCell.swift; sourceTree = "<group>"; };
 		42367D4628E3853D0018D8F6 /* SplashScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenVC.swift; sourceTree = "<group>"; };
+		42367D5328E38A050018D8F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		42367D5728E38B1D0018D8F6 /* RemoteConfigHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigHelper.swift; sourceTree = "<group>"; };
+		42367D5928E3976F0018D8F6 /* TheOpenMovieDatabase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TheOpenMovieDatabase.entitlements; sourceTree = "<group>"; };
+		42367D5B28E3A4CC0018D8F6 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		42492EA928E053D600122302 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		42492EAE28E0561B00122302 /* loadingAnim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingAnim.json; sourceTree = "<group>"; };
 		42492EB228E05C2E00122302 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
@@ -124,9 +136,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42367D4E28E387B30018D8F6 /* FirebaseMessaging in Frameworks */,
+				42367D5228E387B30018D8F6 /* FirebaseRemoteConfigSwift in Frameworks */,
 				42492EC828E070F600122302 /* SnapKit in Frameworks */,
 				42492EA728E0538A00122302 /* SDWebImage in Frameworks */,
+				42367D5028E387B30018D8F6 /* FirebaseRemoteConfig in Frameworks */,
+				42367D4A28E387B30018D8F6 /* FirebaseAnalytics in Frameworks */,
 				42492EAD28E0555400122302 /* Lottie in Frameworks */,
+				42367D4C28E387B30018D8F6 /* FirebaseAnalyticsSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +237,31 @@
 				42367D4628E3853D0018D8F6 /* SplashScreenVC.swift */,
 			);
 			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		42367D5528E38AF20018D8F6 /* RemoteConfig */ = {
+			isa = PBXGroup;
+			children = (
+				42367D5728E38B1D0018D8F6 /* RemoteConfigHelper.swift */,
+			);
+			path = RemoteConfig;
+			sourceTree = "<group>";
+		};
+		42367D5628E38AFF0018D8F6 /* OMBDAPI */ = {
+			isa = PBXGroup;
+			children = (
+				427CB1BF28DDC94D004AFB6D /* Network.swift */,
+				427CB1D228DDCF27004AFB6D /* RequestType.swift */,
+			);
+			path = OMBDAPI;
+			sourceTree = "<group>";
+		};
+		42367D5A28E3A4B60018D8F6 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				42367D5B28E3A4CC0018D8F6 /* Reachability.swift */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 		42492EB028E056D800122302 /* SupportedFiles */ = {
@@ -323,6 +365,8 @@
 		427CB1A428DDC8AE004AFB6D /* TheOpenMovieDatabase */ = {
 			isa = PBXGroup;
 			children = (
+				42367D5928E3976F0018D8F6 /* TheOpenMovieDatabase.entitlements */,
+				42367D5328E38A050018D8F6 /* GoogleService-Info.plist */,
 				42492EB028E056D800122302 /* SupportedFiles */,
 				427CB1C428DDC97A004AFB6D /* Utils */,
 				427CB1C128DDC95B004AFB6D /* Model */,
@@ -387,8 +431,8 @@
 		427CB1BE28DDC942004AFB6D /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				427CB1BF28DDC94D004AFB6D /* Network.swift */,
-				427CB1D228DDCF27004AFB6D /* RequestType.swift */,
+				42367D5528E38AF20018D8F6 /* RemoteConfig */,
+				42367D5628E38AFF0018D8F6 /* OMBDAPI */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -406,6 +450,7 @@
 		427CB1C428DDC97A004AFB6D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				42367D5A28E3A4B60018D8F6 /* Reachability */,
 				427CB1D428DDCFA6004AFB6D /* Helpers */,
 				427CB1C528DDC98D004AFB6D /* Extensions */,
 			);
@@ -484,6 +529,11 @@
 				42492EA628E0538A00122302 /* SDWebImage */,
 				42492EAC28E0555400122302 /* Lottie */,
 				42492EC728E070F600122302 /* SnapKit */,
+				42367D4928E387B30018D8F6 /* FirebaseAnalytics */,
+				42367D4B28E387B30018D8F6 /* FirebaseAnalyticsSwift */,
+				42367D4D28E387B30018D8F6 /* FirebaseMessaging */,
+				42367D4F28E387B30018D8F6 /* FirebaseRemoteConfig */,
+				42367D5128E387B30018D8F6 /* FirebaseRemoteConfigSwift */,
 			);
 			productName = TheOpenMovieDatabase;
 			productReference = 427CB1A228DDC8AE004AFB6D /* TheOpenMovieDatabase.app */;
@@ -517,6 +567,7 @@
 				42492EA528E0538A00122302 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				42492EAB28E0555400122302 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				42492EC628E070F600122302 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				42367D4828E387B30018D8F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 427CB1A328DDC8AE004AFB6D /* Products */;
 			projectDirPath = "";
@@ -534,6 +585,7 @@
 			files = (
 				42492EBA28E0650700122302 /* emptyPage.json in Resources */,
 				427CB1B228DDC8B1004AFB6D /* LaunchScreen.storyboard in Resources */,
+				42367D5428E38A060018D8F6 /* GoogleService-Info.plist in Resources */,
 				42492EAF28E0561B00122302 /* loadingAnim.json in Resources */,
 				427CB1AF28DDC8B1004AFB6D /* Assets.xcassets in Resources */,
 				42367D1B28E10ECF0018D8F6 /* Color.xcassets in Resources */,
@@ -567,6 +619,7 @@
 				42492EC028E06AB900122302 /* MovieDetailPageVMDelegate.swift in Sources */,
 				427CB1CD28DDCABA004AFB6D /* HomePageVCViewModel.swift in Sources */,
 				42367D4428E37D2D0018D8F6 /* DetailOnlyTextCell.swift in Sources */,
+				42367D5828E38B1D0018D8F6 /* RemoteConfigHelper.swift in Sources */,
 				42492ECC28E07C0500122302 /* SearchCollectionView.swift in Sources */,
 				42492EB328E05C2E00122302 /* AnimationViewController.swift in Sources */,
 				427CB1C028DDC94D004AFB6D /* Network.swift in Sources */,
@@ -586,6 +639,7 @@
 				428C587C28E0D6FC00F9EFAD /* Animation+Extension.swift in Sources */,
 				42492EC228E06B1C00122302 /* MovieDetailViewModel.swift in Sources */,
 				42492ED528E086B700122302 /* HomePageCollectionViewCell.swift in Sources */,
+				42367D5C28E3A4CC0018D8F6 /* Reachability.swift in Sources */,
 				42367D3528E324220018D8F6 /* BaseLabel.swift in Sources */,
 				42367D2028E1DC0D0018D8F6 /* AlertManager.swift in Sources */,
 				427CB1D328DDCF28004AFB6D /* RequestType.swift in Sources */,
@@ -737,6 +791,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TheOpenMovieDatabase/TheOpenMovieDatabase.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7N2H5HVDGB;
@@ -747,6 +802,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -765,6 +821,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TheOpenMovieDatabase/TheOpenMovieDatabase.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7N2H5HVDGB;
@@ -775,6 +832,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -812,6 +870,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		42367D4828E387B30018D8F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		42492EA528E0538A00122302 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -839,6 +905,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		42367D4928E387B30018D8F6 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42367D4828E387B30018D8F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		42367D4B28E387B30018D8F6 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42367D4828E387B30018D8F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		42367D4D28E387B30018D8F6 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42367D4828E387B30018D8F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		42367D4F28E387B30018D8F6 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42367D4828E387B30018D8F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		42367D5128E387B30018D8F6 /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42367D4828E387B30018D8F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
+		};
 		42492EA628E0538A00122302 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 42492EA528E0538A00122302 /* XCRemoteSwiftPackageReference "SDWebImage" */;

@@ -8,12 +8,15 @@
 import UIKit
 import Lottie
 class BaseVC: UIViewController {
-    var child: AnimationViewController?
     
+    var child: AnimationViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "OMBD Movies"
+        navigationItem.titleView?.backgroundColor = .darkPrimaryColor
+        self.navigationController?.navigationBar.isTranslucent = true
+        navigationItem.backButtonTitle = "Back"
     }
     
     func startAnimating(animationName: Animations) {

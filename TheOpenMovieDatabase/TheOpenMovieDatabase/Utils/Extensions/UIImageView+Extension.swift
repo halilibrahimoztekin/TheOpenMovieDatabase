@@ -14,7 +14,7 @@ extension UIImageView {
     func setImage(with url: String) {
         self.sd_imageIndicator = SDWebImageActivityIndicator.gray
         self.sd_setImage(with: URL(string: url), placeholderImage: nil, options: [.progressiveLoad]) { image, error, cache, url in
-            if let error = error {
+            if let _ = error {
                 self.image = UIImage(named: "noImage")
                 self.contentMode = .scaleAspectFit
             }

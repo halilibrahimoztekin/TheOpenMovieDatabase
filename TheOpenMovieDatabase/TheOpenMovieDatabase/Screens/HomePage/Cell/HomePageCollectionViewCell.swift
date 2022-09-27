@@ -59,7 +59,6 @@ class HomePageCollectionViewCell: UICollectionViewCell {
 
     private func configureSnapKit() {
         let height = self.contentView.bounds.height
-        let width = self.contentView.bounds.width
         container.snp.makeConstraints { make in
             make.size.equalToSuperview()
         }
