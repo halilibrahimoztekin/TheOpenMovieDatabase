@@ -19,6 +19,6 @@
 
 # SecreenShoots
 
-![](https://raw.githubusercontent.com/halilibrahimoztekin/TheOpenMovieDatabase/main/TheOpenMovieDatabase/ScreenShoots/homess1.png?token=GHSAT0AAAAAABW22F7K4UGFUOX2HON6D2LAYZUD4FA)
-![](https://raw.githubusercontent.com/halilibrahimoztekin/TheOpenMovieDatabase/main/TheOpenMovieDatabase/ScreenShoots/detailss.png?token=GHSAT0AAAAAABW22F7KE5PYMXHTSLBQUITEYZUD5JA)
+![](https://raw.githubusercontent.com/halilibrahimoztekin/TheOpenMovieDatabase/main/TheOpenMovieDatabase/ScreenShoots/homess.png?token=GHSAT0AAAAAABW22F7KHUYH5GQHX55K2AVCYZUEI4Q)
+![](https://raw.githubusercontent.com/halilibrahimoztekin/TheOpenMovieDatabase/main/TheOpenMovieDatabase/ScreenShoots/detail.png?token=GHSAT0AAAAAABW22F7KZRRI7FW24MUHT2JGYZUEJOA)
 
