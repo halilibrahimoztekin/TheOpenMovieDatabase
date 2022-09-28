@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct URLConstants {
-    static let baseURL = "http://www.omdbapi.com/?"
-    static let apiKey = "apikey=61c3f542"
-    static let movieTitleKey = "&s="
-    static let pageKey = "&page="
-    static let imbdIDKey = "&i="
-    static let plotKey = "&plot=full"
+enum URLConstants  : String {
+    case baseURL = "http://www.omdbapi.com/?"
+    case apiKey = "apikey=61c3f542"
+    case movieTitleKey = "&s="
+    case pageKey = "&page="
+    case imbdIDKey = "&i="
+    case plotKey = "&plot=full"
 }
 enum RequestType {
     case search(movieTitle : String,page : Int = 1)
@@ -22,9 +22,9 @@ enum RequestType {
     var endPoint : String {
         switch self {
         case .search(let movieTitle, let page):
-            return URLConstants.baseURL + URLConstants.apiKey + URLConstants.movieTitleKey + movieTitle + URLConstants.pageKey + page.toString
+            return URLConstants.baseURL.rawValue + URLConstants.apiKey.rawValue + URLConstants.movieTitleKey.rawValue + movieTitle + URLConstants.pageKey.rawValue + page.toString
         case .detail(let imbdID):
-            return URLConstants.baseURL + URLConstants.apiKey + URLConstants.imbdIDKey + imbdID + URLConstants.plotKey
+            return URLConstants.baseURL.rawValue + URLConstants.apiKey.rawValue + URLConstants.imbdIDKey.rawValue + imbdID + URLConstants.plotKey.rawValue
         }
     }
     var httpMethod : HttpMethod {
