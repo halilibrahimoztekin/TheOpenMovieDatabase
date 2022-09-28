@@ -29,6 +29,13 @@ class SplashScreenVC: UIViewController {
             AlertManager.shared.showAlert(title: "Warning".uppercased(), message: "Check Your Internet Connection".uppercased())
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.addSubviews(label)
+        label.frame.size = CGSize(width: 100, height: 100)
+        label.center = view.center
+    }
 
     func remoteValueLoaded(logoText: String) {
         DispatchQueue.main.async {
@@ -45,17 +52,5 @@ class SplashScreenVC: UIViewController {
                 self.navigationController?.pushViewController(HomePageVC(nibName: nil, bundle: nil), animated: true)
             })
         }
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.addSubviews(label)
-        label.frame.size = CGSize(width: 100, height: 100)
-        label.center = view.center
-
-
-
-
-    }
-
+    } 
 }
