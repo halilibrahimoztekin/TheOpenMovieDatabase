@@ -35,13 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
         messaging.token { token, _ in
-            guard let token = token else {
-                return
-            }
+            guard let token = token else {return}
             Logger.log(text: token)
-            
         }
     }
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -59,6 +57,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-extension AppDelegate : MessagingDelegate,UNUserNotificationCenterDelegate {
-    
-}
+extension AppDelegate : MessagingDelegate,UNUserNotificationCenterDelegate {}
