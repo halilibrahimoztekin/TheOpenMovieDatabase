@@ -9,9 +9,14 @@ import Foundation
 
 import FirebaseRemoteConfig
 
+enum RemoteConfigEnums : String
+{
+    case logoText = "LogoText"
+}
 
 class RemoteConfigHelper {
     static let shared = RemoteConfigHelper()
+    
 
     func fetchRemoteConfig() {
         remoteConfig.fetch(withExpirationDuration: 0) { [weak self] status, error in
@@ -21,7 +26,8 @@ class RemoteConfigHelper {
     }
 
     func displayNewValues(completion: @escaping (String)->()){
-        let logoText = remoteConfig.configValue(forKey: "LogoText").stringValue ?? ""
+        let logoText = remoteConfig.configValue(forKey: RemoteConfigEnums.logoText.rawValue).stringValue ?? ""
+        CacheManager.shared.setLogoText(text: logoText)
         completion(logoText)
     }
 }
