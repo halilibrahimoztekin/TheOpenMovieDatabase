@@ -8,18 +8,18 @@
 import Foundation
 import UIKit
 
-protocol SearchCollectionViewInput {
+protocol HomePageDataSourceInput {
     func update(model : MovieSearchModel)
     func removeAllMovies()
 }
 
-protocol SearchCollectionViewOutPut : AnyObject {
+protocol HomePageDataSourceOutput : AnyObject {
     func onSelected(movie: Movies)
     func loadMoreData(index : Int)
 }
 
-class SearchCollectionView : NSObject {
-    weak var delegate : SearchCollectionViewOutPut?
+class HomePageDataSource : NSObject {
+    weak var delegate : HomePageDataSourceOutput?
     private lazy var movies : [Movies] = []
     private var index = 1
     var isPagination = true
@@ -46,9 +46,9 @@ class SearchCollectionView : NSObject {
     }
 }
 
-extension SearchCollectionView : UICollectionViewDelegate,UICollectionViewDataSource {}
+extension HomePageDataSource : UICollectionViewDelegate,UICollectionViewDataSource {}
 
-extension SearchCollectionView : SearchCollectionViewInput {
+extension HomePageDataSource : HomePageDataSourceInput {
     func removeAllMovies() {
         movies.removeAll()
         index = 1

@@ -35,7 +35,7 @@ class DetailDataSource: NSObject {
                 cell.configureCell(imageLink: movieDetail.poster ?? "")
                 return cell
             case .ratings:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCollectionCell.reuseIdentifier, for: indexPath) as! DetailFeatureCollectionCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCell.reuseIdentifier, for: indexPath) as! DetailFeatureCell
                 cell.configure(title: sections[indexPath.row].rawValue, description: movieDetail.imdbRating ?? "")
                 return cell
             case .title:
@@ -43,23 +43,23 @@ class DetailDataSource: NSObject {
                 cell.configureCell(text: movieDetail.title ?? "")
                 return cell
             case .year:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCollectionCell.reuseIdentifier, for: indexPath) as! DetailFeatureCollectionCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCell.reuseIdentifier, for: indexPath) as! DetailFeatureCell
                 cell.configure(title: sections[indexPath.row].rawValue, description: movieDetail.year ?? "")
                 return cell
             case .released:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCollectionCell.reuseIdentifier, for: indexPath) as! DetailFeatureCollectionCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCell.reuseIdentifier, for: indexPath) as! DetailFeatureCell
                 cell.configure(title: sections[indexPath.row].rawValue, description: movieDetail.released ?? "")
                 return cell
             case .runtime:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCollectionCell.reuseIdentifier, for: indexPath) as! DetailFeatureCollectionCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCell.reuseIdentifier, for: indexPath) as! DetailFeatureCell
                 cell.configure(title: sections[indexPath.row].rawValue, description: movieDetail.runtime ?? "")
                 return cell
             case .genre:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCollectionCell.reuseIdentifier, for: indexPath) as! DetailFeatureCollectionCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCell.reuseIdentifier, for: indexPath) as! DetailFeatureCell
                 cell.configure(title: sections[indexPath.row].rawValue, description: movieDetail.genre ?? "")
                 return cell
             case .actors:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCollectionCell.reuseIdentifier, for: indexPath) as! DetailFeatureCollectionCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCell.reuseIdentifier, for: indexPath) as! DetailFeatureCell
                 cell.configure(title: sections[indexPath.row].rawValue, description: movieDetail.actors ?? "")
                 return cell
             case .plot:
@@ -67,23 +67,23 @@ class DetailDataSource: NSObject {
                 cell.configureCell(text: movieDetail.plot ?? "")
                 return cell
             case .director:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCollectionCell.reuseIdentifier, for: indexPath) as! DetailFeatureCollectionCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCell.reuseIdentifier, for: indexPath) as! DetailFeatureCell
                 cell.configure(title: sections[indexPath.row].rawValue, description: movieDetail.director ?? "")
                 return cell
             case .writer:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCollectionCell.reuseIdentifier, for: indexPath) as! DetailFeatureCollectionCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCell.reuseIdentifier, for: indexPath) as! DetailFeatureCell
                 cell.configure(title: sections[indexPath.row].rawValue, description: movieDetail.writer ?? "")
                 return cell
             case .country:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCollectionCell.reuseIdentifier, for: indexPath) as! DetailFeatureCollectionCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCell.reuseIdentifier, for: indexPath) as! DetailFeatureCell
                 cell.configure(title: sections[indexPath.row].rawValue, description: movieDetail.country ?? "")
                 return cell
             case .awards:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCollectionCell.reuseIdentifier, for: indexPath) as! DetailFeatureCollectionCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCell.reuseIdentifier, for: indexPath) as! DetailFeatureCell
                 cell.configure(title: sections[indexPath.row].rawValue, description: movieDetail.awards ?? "")
                 return cell
             case .imbdVotes:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCollectionCell.reuseIdentifier, for: indexPath) as! DetailFeatureCollectionCell
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailFeatureCell.reuseIdentifier, for: indexPath) as! DetailFeatureCell
                 cell.configure(title: sections[indexPath.row].rawValue, description: movieDetail.imdbVotes ?? "")
                 return cell
             }

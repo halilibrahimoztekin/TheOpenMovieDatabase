@@ -22,8 +22,8 @@ class SplashScreenVC: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         if Reachability.isConnectedToNetwork() {
-            RemoteConfigHelper.shared.displayNewValues { logoText in
-                self.remoteValueLoaded(logoText: logoText)
+            RemoteConfigHelper.shared.displayNewValues { [weak self] logoText in
+                self?.remoteValueLoaded(logoText: logoText)
             }
         } else {
             AlertManager.shared.showAlert(title: "Warning".uppercased(), message: "Check Your Internet Connection".uppercased())
@@ -32,8 +32,16 @@ class SplashScreenVC: UIViewController {
 
     func remoteValueLoaded(logoText: String) {
         DispatchQueue.main.async {
-            self.label.text = logoText
-            Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: { timer in
+            UIView.transition(with: self.label,
+                              duration: 1,
+                              options: .transitionCrossDissolve,
+                              animations: { [weak self] in
+                                  self?.label.text = logoText
+                              }, completion: nil)
+            
+            Timer.scheduledTimer(withTimeInterval: 3.0,
+                                 repeats: false, 
+                                 block: { timer in
                 self.navigationController?.pushViewController(HomePageVC(nibName: nil, bundle: nil), animated: true)
             })
         }

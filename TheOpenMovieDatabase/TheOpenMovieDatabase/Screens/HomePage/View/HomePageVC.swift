@@ -11,7 +11,7 @@ import SnapKit
 class HomePageVC: BaseVC {
 
     private let viewModel = HomePageVCViewModel(networkDelegate: Network())
-    private let dataSource: SearchCollectionView = SearchCollectionView()
+    private let dataSource: HomePageDataSource = HomePageDataSource()
 
     private let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
     
@@ -165,7 +165,7 @@ extension HomePageVC: HomePageVCViewModelDelegate {
 }
 
 //MARK: SearchCollectionViewOutPut
-extension HomePageVC: SearchCollectionViewOutPut {
+extension HomePageVC: HomePageDataSourceOutput {
     func loadMoreData(index: Int) {
         getMovies(movieTitle: movieTitle, page: index)
     }

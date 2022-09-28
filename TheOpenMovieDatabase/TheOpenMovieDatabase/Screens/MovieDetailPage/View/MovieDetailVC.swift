@@ -7,23 +7,7 @@
 
 import UIKit
 import FirebaseAnalytics
-enum DetailPageSections : String, CaseIterable {
-    case image = "image"
-    case title = "Title"
-    case imbdVotes = "IMBD Votes"
-    case ratings = "Ratings"
-    case year = "Year"
-    case runtime = "Runtime"
-    case released = "Released"
-    case genre = "Genre"
-    case plot = "Plot"
-    case actors = "Actors"
-    case director = "Director"
-    case writer = "Writer"
-    case country = "Country"
-    case awards = "Awards"
-    
-}
+
 class MovieDetailVC: BaseVC {
    
 
@@ -56,7 +40,7 @@ class MovieDetailVC: BaseVC {
     
     private func registerCell() {
         collectionView.register(DetailFullImageCell.self, forCellWithReuseIdentifier: DetailFullImageCell.reuseIdentifier)
-        collectionView.register(DetailFeatureCollectionCell.self, forCellWithReuseIdentifier: DetailFeatureCollectionCell.reuseIdentifier)
+        collectionView.register(DetailFeatureCell.self, forCellWithReuseIdentifier: DetailFeatureCell.reuseIdentifier)
         collectionView.register(DetailOnlyTextCell.self, forCellWithReuseIdentifier: DetailOnlyTextCell.reuseIdentifier)
     }
     
@@ -74,20 +58,12 @@ class MovieDetailVC: BaseVC {
             make.bottom.equalToSuperview()
         }
     }
-    
-    func createSection() -> [DetailPageSections] {
-        let values: [DetailPageSections] = DetailPageSections.allCases.map { $0 }
-        return values
-    }
-    
-     
-   
 }
 
 
 extension MovieDetailVC: MovieDetailPageVMDelegate {
     func didFinishedLoadingMovie(movieDetail: MovieDetailModel) {
-        let sections = createSection()
+        let sections = viewModel.createSection()
         dataSource.update(sections: sections, movieDetail: movieDetail)
       
         DispatchQueue.main.async {
@@ -101,6 +77,5 @@ extension MovieDetailVC: MovieDetailPageVMDelegate {
             self.stopAndHideAnimation()
             AlertManager.shared.showAlert(title: "Warning".uppercased(), message: error.message.uppercased())
         }
-        
     }
 }

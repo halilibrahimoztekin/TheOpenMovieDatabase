@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 extension UIView {
-    func addSubviews(_ subviews :UIView...) {
+    func addSubviews(_ subviews: UIView...) {
         for subview in subviews {
             addSubview(subview)
         }
     }
-    func createGradient(){
+    func createGradient() {
         let gradient = CAGradientLayer()
         gradient.frame = self.bounds
         gradient.colors = [UIColor.darkPrimaryColor?.cgColor, UIColor.darkGray.cgColor]

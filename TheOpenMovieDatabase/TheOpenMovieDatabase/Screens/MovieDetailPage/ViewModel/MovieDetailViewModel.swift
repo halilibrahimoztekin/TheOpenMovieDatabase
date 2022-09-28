@@ -28,4 +28,8 @@ class DetailViewControllerViewModel {
         }
     }
 
+    func createSection() -> [DetailPageSections] {
+        let values: [DetailPageSections] = DetailPageSections.allCases.map { $0 }
+        return values
+    }
 }

@@ -25,5 +25,7 @@ class BaseLabelWithBackground : UILabel {
         self.layer.cornerRadius = 15
         self.layer.backgroundColor = UIColor.primaryColor?.cgColor
         self.font = UIFont.systemFont(ofSize: 13)
+        self.adjustsFontSizeToFitWidth = true
+        self.minimumScaleFactor = 0.7
     }
 }
