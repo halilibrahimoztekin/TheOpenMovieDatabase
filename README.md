@@ -18,7 +18,8 @@
 - SnapKit
 
 # SecreenShoots
-
-![](https://raw.githubusercontent.com/halilibrahimoztekin/TheOpenMovieDatabase/main/TheOpenMovieDatabase/ScreenShoots/homess.png?token=GHSAT0AAAAAABW22F7KHUYH5GQHX55K2AVCYZUEI4Q)
-![](https://raw.githubusercontent.com/halilibrahimoztekin/TheOpenMovieDatabase/main/TheOpenMovieDatabase/ScreenShoots/detail.png?token=GHSAT0AAAAAABW22F7KZRRI7FW24MUHT2JGYZUEJOA)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/halilibrahimoztekin/TheOpenMovieDatabase/main/TheOpenMovieDatabase/ScreenShoots/homess.png?token=GHSAT0AAAAAABW22F7KHUYH5GQHX55K2AVCYZUEI4Q" width="350" title="hover text">
+  <img src="https://raw.githubusercontent.com/halilibrahimoztekin/TheOpenMovieDatabase/main/TheOpenMovieDatabase/ScreenShoots/detail.png?token=GHSAT0AAAAAABW22F7KZRRI7FW24MUHT2JGYZUEJOA" width="350" alt="accessibility text">
+</p>
 
