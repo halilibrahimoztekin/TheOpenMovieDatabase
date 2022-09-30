@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 import SDWebImage
-
 extension UIImageView {
 
     func setImage(with url: String) {

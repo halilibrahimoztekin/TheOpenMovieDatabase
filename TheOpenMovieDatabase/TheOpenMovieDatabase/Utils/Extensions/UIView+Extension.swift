@@ -16,7 +16,7 @@ extension UIView {
     func createGradient() {
         let gradient = CAGradientLayer()
         gradient.frame = self.bounds
-        gradient.colors = [UIColor.darkPrimaryColor?.cgColor, UIColor.darkGray.cgColor]
+        gradient.colors = [UIColor.darkPrimaryColor?.cgColor ?? UIColor.darkGray.cgColor, UIColor.darkGray.cgColor]
 
         self.layer.insertSublayer(gradient, at: 0)
     }
